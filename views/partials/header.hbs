@@ -1,0 +1,12 @@
+<h1>header</h1>
+<a href="/shopping-cart/">shopping cart</a>
+<span class="badge">{{session.cart.totalQty}}</span>
+<ul>
+    {{#if login }}
+        <li><a href="/user/profile">User Account</a></li>
+        <li><a href="/user/logout">Logout</a></li>
+    {{else}}
+        <li><a href="/user/signup">Sign up</a></li>
+        <li><a href="/user/signin">Sign in</a></li>
+    {{/if}}
+</ul>
