@@ -1,0 +1,31 @@
+<%- include('../_layouts/adminheader') %>
+
+<h2 class="page-title">Pages</h2>
+<a href="/admin/pages/add-page" class="btn btn-primary">Add a new page</a>
+<br>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Page
+            </th>
+            <th>Edit</th>
+            <td>Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        <% pages.forEach(function(page) { %>
+        <tr>
+            <td>
+                <%= page.title %>
+            </td>
+            <td><a href="/admin/pages/edit-page/<%= page._id %>">Edit</a></td>
+
+            <td><a class="confirmDeletion" href="/admin/pages/delete-page/<%= page._id %>">Delete</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<%- include('../_layouts/adminfooter') %>
